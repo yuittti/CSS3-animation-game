@@ -1,0 +1,411 @@
+body {
+    margin: 0;
+    background: linear-gradient(black 0%, black 33%, #2684bb 35%, #062748 100%);
+}
+
+/* Wrapper ----------------------------------------------------------------- */
+.wrapper {
+    position: relative;
+    width:  1024px;
+    height: 768px;
+    margin: 0 auto;
+    overflow: hidden;
+    background: url("../images/background.jpg") no-repeat;
+    background-size: contain;
+}
+
+.wrap-shake {
+    animation: wrapshake 0.1s 3s ease;
+}
+
+@keyframes wrapshake {
+    from {
+        transform: rotate(5deg) scale(1.1);
+    }
+    50% {
+        transform: rotate(-10deg);
+    }
+    to {
+        transform: rotate(5deg) scale(1);
+    }
+}
+
+/* Ocean waves ------------------------------------------------------------- */
+.water1, .water2 {
+    width: 100%;
+    height: 521px;
+    position: absolute;
+    bottom: 0;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.water2 {
+    z-index: 3;
+}
+
+.water1 img {
+    left: 0;
+    animation: wave1 2s ease-out infinite;
+}
+
+@keyframes wave1 {
+    from {
+        transform: translateX(0px);
+    }
+    50% {
+        transform: translateX(-60px);
+    }
+    to {
+        transform: translateX(0px);
+    }
+}
+
+.water2 img {
+    margin-left: 0;
+    animation: wave2 2s ease-in infinite;
+}
+
+@keyframes wave2 {
+    from {
+        margin-left: 0;
+    }
+    50% {
+        margin-left: -60px;
+    }
+    to {
+        margin-left: 0;
+    }
+}
+
+/* Torpedos ---------------------------------------------------------------- */
+div[class^=torpedo] {
+    width: 154px;
+    height: 44px;
+    position: absolute;
+    background: url("../images/torpeda.png");
+    z-index: 4;
+}
+
+.torpedo1 {
+    left: 80px;
+    top: 333px;
+    transform: rotate(6deg);
+    transform-origin: 0px;
+    animation: shake1 3s linear infinite;
+}
+
+@keyframes shake1 {
+    from {
+        transform: rotate(9deg);
+    }
+    50%{
+        transform: rotate(6deg);
+    }
+    to {
+        transform: rotate(9deg);
+    }
+}
+
+.attack1 {
+    animation: attack1 3s linear forwards;
+}
+
+@keyframes attack1 {
+    100% {
+        left: 390px;
+        top: 260px;
+        visibility: hidden;
+    }
+}
+
+.torpedo2 {
+    left: 82px;
+    top: 412px;
+    transform: rotate(-4deg);
+    transform-origin: 0px;
+    animation: shake2 4s ease infinite;
+}
+
+@keyframes shake2 {
+    from {
+        transform: rotate(-7deg);
+    }
+    50%{
+        transform: rotate(-4deg);
+    }
+    to {
+        transform: rotate(-7deg);
+    }
+}
+
+.attack2 {
+    animation: attack2 3s linear forwards;
+}
+
+@keyframes attack2 {
+    100% {
+        left: 395px;
+        top: 300px;
+        visibility: hidden;
+    }
+}
+
+.torpedo3 {
+    left: 95px;
+    top: 500px;
+    transform: rotate(-18deg);
+    transform-origin: 0px;
+    animation: shake3 3s ease-in infinite;
+}
+
+@keyframes shake3 {
+    from {
+        transform: rotate(-15deg);
+    }
+    50%{
+        transform: rotate(-18deg);
+    }
+    to {
+        transform: rotate(-15deg);
+    }
+}
+
+.attack3 {
+    animation: attack3 3s linear forwards;
+}
+
+@keyframes attack3 {
+    100% {
+        left: 375px;
+        top: 325px;
+        visibility: hidden;
+    }
+}
+
+.torpedo4 {
+    left: 130px;
+    top: 585px;
+    transform: rotate(-33deg);
+    transform-origin: 0px;
+    animation: shake4 4s ease-in infinite;
+}
+
+@keyframes shake4 {
+    from {
+        transform: rotate(-36deg);
+    }
+    50%{
+        transform: rotate(-33deg);
+    }
+    to {
+        transform: rotate(-36deg);
+    }
+}
+
+.attack4 {
+    animation: attack4 3s linear forwards;
+}
+
+@keyframes attack4 {
+    100% {
+        left: 375px;
+        top: 345px;
+        visibility: hidden;
+    }
+}
+
+.torpedo5 {
+    right: 95px;
+    top: 490px;
+    transform: scale(-1, 1) rotate(-11deg);
+    transform-origin: 77px;
+    animation: shake5 3s linear infinite;
+}
+
+@keyframes shake5 {
+    from {
+        transform: scale(-1, 1) rotate(-14deg);
+    }
+    50%{
+        transform: scale(-1, 1) rotate(-11deg);
+    }
+    to {
+        transform: scale(-1, 1) rotate(-14deg);
+    }
+}
+
+.attack5 {
+    animation: attack5 3s linear forwards;
+}
+
+@keyframes attack5 {
+    100% {
+        right: 375px;
+        top: 310px;
+        visibility: hidden;
+    }
+}
+
+.torpedo6 {
+    right: 105px;
+    top: 545px;
+    transform: scale(-1, 1) rotate(-18deg);
+    transform-origin: 77px;
+    animation: shake6 4s ease infinite;
+}
+
+@keyframes shake6 {
+    from {
+        transform: scale(-1, 1) rotate(-21deg);
+    }
+    50%{
+        transform: scale(-1, 1) rotate(-18deg);
+    }
+    to {
+        transform: scale(-1, 1) rotate(-21deg);
+    }
+}
+
+.attack6 {
+    animation: attack6 3s linear forwards;
+}
+
+@keyframes attack6 {
+    100% {
+        right: 375px;
+        top: 310px;
+        visibility: hidden;
+    }
+}
+
+/* Iceberg ----------------------------------------------------------------- */
+div.iceberg {
+    width: 111px;
+    height: 131px;
+    position: absolute;
+    left: calc(50% - 55px);
+    top: 220px;
+    background: url("../images/aisberg.png");
+    z-index: 2;
+    animation: shacking 4s linear infinite;
+    transform-origin: 55px;
+    transition: top 3s linear;
+}
+
+@keyframes shacking {
+    from {
+        transform: rotate(5deg);
+    }
+    50% {
+        transform: rotate(-5deg);
+    }
+    to {
+        transform: rotate(5deg);
+    }
+}
+
+div.iceberg img {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    opacity: 0.5;
+    transition: bottom 3s linear;
+}
+
+.draw {
+    animation: draw 5s linear forwards;
+}
+
+@keyframes draw {
+    100% {
+        bottom: -800px;
+    }
+}
+
+/* Messages ---------------------------------------------------------------- */
+.message {
+    width: 300px;
+    margin: 300px auto 0 auto;
+    padding: 20px;
+    border: 5px solid crimson;
+    border-radius: 15px;
+    color: white;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    text-align: center;
+    transition: 5s linear all;
+}
+
+.message span {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.show-message {
+    animation: show-msg 6s linear;
+}
+
+@keyframes show-msg {
+    from {
+        margin-top: 300px;
+    }
+    50% {
+        margin-top: 50px;
+    }
+    to {
+        margin-top: -300px;
+    }
+}
+
+.finish {
+    position: absolute;
+    top: 115px;
+    left: 85px;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: 1s linear opacity;
+}
+
+.finish span {
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: 30px;
+    color: #95ca00;
+}
+
+button {
+    width: 150px;
+    padding: 10px;
+    position: absolute;
+    left: calc(50% - 75px);
+    top: 406px;
+    border: 2px solid dodgerblue;
+    border-radius: 10px;
+    outline: none;
+
+    box-shadow: 2px 2px 3px #334280, inset 2px 2px 3px #334280;
+    cursor: pointer;
+
+    background: transparent;
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #373c56;
+    color: dodgerblue;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 1s linear opacity;
+    z-index: 998;
+}
+
+button:hover {
+    box-shadow: inset 2px 2px 2px -2px #439cff, inset -2px -2px 2px -1px #334280;
+}
+
+button:active {
+    outline: none;
+}
